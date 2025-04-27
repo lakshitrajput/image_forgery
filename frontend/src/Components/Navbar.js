@@ -4,7 +4,7 @@ function Navbar() {
         <>
             <header className="fixed top-0 left-0 w-full bg-neutral-800 z-50">
                 <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
-                    <a className="block text-green-600" href="#">
+                    <a className="block text-indigo-400" href="#">
                         <span>IMAGE FORGERY</span>
                     </a>
 
