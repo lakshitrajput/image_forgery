@@ -1,9 +1,25 @@
 import React from "react";
+import Navbar from "../Components/Navbar";
+import Banner from "../Components/Banner";
+import Section from "../Components/Section";
+import Footer from "../Components/Footer";
 
 const Home = () => {
     return (
         <>
-        <h1>Welcome to client side</h1>
+            <Navbar />
+
+            <section id="home">
+                <Banner />
+            </section>
+
+            <section id="feature">
+                <Section />
+            </section>
+
+            <section id="about">
+                <Footer />
+            </section>
         </>
     )
 }
