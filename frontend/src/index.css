@@ -1,0 +1,338 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* @import '~mdb-ui-kit/css/mdb.min.css'; */
+
+:root {
+    --PrimaryBackground: #0F0F1B;
+    --PrimaryAccent: #7C3AED;
+    --SecondaryAccent: #3B82F6;
+    --Warning: #EF4444;
+    --CardBackground: #1F1F2E;
+    --TextPrimary: #E5E7EB;
+    --TextSecondary: #9CA3AF;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/*  Home Page Navbar */
+.navbar {
+    position: absolute;
+    z-index: 2;
+    /* background: linear-gradient(90deg, #0d0d0d, #1a1a1a, #0d0d0d); */
+}
+
+.navbar-custom {
+    /* background: linear-gradient(90deg, #0d0d0d, #1a1a1a, #0d0d0d); */
+}
+
+.logo-text {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #7f5af0;
+    transition: color 0.3s ease;
+    font-family: 'Bebas Neue', cursive;
+    text-decoration: none;
+}
+
+.logo-text:hover {
+    color: #a78bfa;
+}
+
+/* Hero-section */
+
+.hero-section {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background: url("https://images6.alphacoders.com/137/thumb-1920-1372163.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.hero-text {
+    font-size: 33px;
+    position: absolute;
+    left: 10%;
+}
+
+
+
+
+
+/* Auth screen */
+
+
+
+.auth {
+    font-family: 'Bebas Neue', cursive;
+    width: 100%;
+    height: 100vh;
+    background: url("https://images.alphacoders.com/139/thumb-1920-1394862.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.auth-form {
+    background-color: var(--CardBackground);
+    width: 56%;
+    opacity: 0.8;
+    min-height: 500px;
+}
+
+/* Home screen */
+.home-screen {
+    position: relative;
+    background: url("https://images8.alphacoders.com/134/thumb-1920-1347905.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+    z-index: 0;
+}
+
+.home-screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.242);
+    /* adjust the 0.6 to make it lighter/darker */
+    z-index: -1;
+}
+
+/* General */
+.solo-btn {
+    position: relative;
+    background: linear-gradient(145deg, #2c1a4f, #150d2f);
+    color: #eaeaea;
+    padding: 14px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 2px solid #7f5af0;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s ease;
+    box-shadow:
+        0 0 20px rgba(127, 90, 240, 0.4),
+        0 0 40px rgba(127, 90, 240, 0.2) inset;
+}
+
+.solo-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.15), transparent 70%);
+    transform: skewX(-20deg);
+    animation: aura 3s infinite linear;
+    z-index: 0;
+}
+
+.solo-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(167, 139, 250, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.solo-btn span {
+    position: relative;
+    z-index: 2;
+    animation: flicker 3s infinite alternate;
+}
+
+.solo-btn:hover {
+    transform: scale(1.05);
+    border-color: #a78bfa;
+    box-shadow:
+        0 0 25px #a78bfa,
+        0 0 50px #7f5af0 inset;
+}
+
+.solo-btn:hover::after {
+    opacity: 1;
+}
+
+.dragon-btn {
+    position: relative;
+    background-color: #7f5af0;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.dragon-btn::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.4) 0%, transparent 70%);
+    animation: pulse 2s infinite;
+    z-index: 0;
+}
+
+.dragon-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #a78bfa, 0 0 40px #7f5af0;
+}
+
+.dragon-btn span {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Daily Quests */
+.quest-screen {
+    position: relative;
+    background: url("https://wallpapers.com/images/hd/your-name-anime-movie-with-mitsuha-3ei83c9m89geuxvc.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+    z-index: 0;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+.solo-btn2 {
+    position: relative;
+    background-color: #7f5af0;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+
+.solo-btn2:hover {
+    /* transform: scale(1.05); */
+    box-shadow: 0 0 20px #a78bfa, 0 0 40px #7f5af0;
+}
+
+
+
+
+@keyframes aura {
+    0% {
+        transform: translateX(0) skewX(-20deg);
+    }
+
+    100% {
+        transform: translateX(10%) skewX(-20deg);
+    }
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+
+    5% {
+        opacity: 0.6;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    15% {
+        opacity: 0.5;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.95;
+    }
+}
+
+.unactive {
+    opacity: 0.2;
+}
+
+.solo-text {
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+/* Media Screen */
+
+@media screen and (max-width: 500px) {
+    .hero-section {
+        background: url("https://images6.alphacoders.com/137/thumb-1920-1372163.jpeg");
+        background-size: cover;
+        background-position: -390px;
+    }
+
+    .hero-text {
+        position: absolute;
+        bottom: 10%;
+    }
+
+    .auth-form {
+        width: 90%;
+        height: auto;
+    }
+}
+
