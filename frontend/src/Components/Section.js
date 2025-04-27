@@ -19,8 +19,18 @@ function Section() {
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
                         <div>
                             <div className="p-4">
-                                <input type="file" accept="image/*" onChange={handleImageChange} />
-                                
+
+                                <label className="inline-block cursor-pointer rounded bg-rose-500 px-4 py-2 text-white font-bold hover:bg-blue-600">
+                                    Upload Image
+                                    <input
+                                        type="file"
+                                        accept="image/*"
+                                        onChange={handleImageChange}
+                                        className="hidden"
+                                    />
+                                </label>
+
+
                                 {preview && (
                                     <div className="mt-4">
                                         <img src={preview} alt="Preview" className="max-w-xl rounded-lg shadow-lg" />
