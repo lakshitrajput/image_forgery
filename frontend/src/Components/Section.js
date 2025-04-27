@@ -1,21 +1,31 @@
+import { useState } from "react";
 
 function Section() {
+
+    const [preview, setPreview] = useState(null);
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const imageUrl = URL.createObjectURL(file);
+            setPreview(imageUrl);
+        }
+    };
+
     return (
         <>
             <section className="pt-12 pb-6">
                 <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
                         <div>
-                            <div className="max-w-lg md:max-w-none">
-                                <h2 className="text-2xl font-semibold text-gray-900 sm:text-3xl">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                </h2>
-
-                                <p className="mt-4 text-gray-700">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur doloremque saepe
-                                    architecto maiores repudiandae amet perferendis repellendus, reprehenderit voluptas
-                                    sequi.
-                                </p>
+                            <div className="p-4">
+                                <input type="file" accept="image/*" onChange={handleImageChange} />
+                                
+                                {preview && (
+                                    <div className="mt-4">
+                                        <img src={preview} alt="Preview" className="max-w-xl rounded-lg shadow-lg" />
+                                    </div>
+                                )}
                             </div>
                         </div>
 
